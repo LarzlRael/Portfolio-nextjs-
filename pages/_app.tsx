@@ -1,7 +1,17 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
+import React from 'react';
+import { IntlProvider } from 'react-intl';
+import { LangProvider } from '../context/langContext';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+
+const MyApp = ({ Component, pageProps }: AppProps) => {
+
+  return (
+    <LangProvider>
+      <Component {...pageProps} />
+    </LangProvider >
+  )
 }
-export default MyApp
+
+export default MyApp;
